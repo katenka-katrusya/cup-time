@@ -15,10 +15,6 @@ export const Router = () => {
       } />
       <Route path='/cart' element={
         <>
-          <br />
-          <br />
-          <br />
-          <br />
           <Cart />
           <Order />
         </>

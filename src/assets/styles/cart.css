@@ -1,32 +1,136 @@
 .cart {
-
+  padding-top: 215px;
+  padding-bottom: 50px;
 }
 
 .cart__container {
-
+  display: grid;
+  align-items: start;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px 20px;
 }
 
 .cart__title {
-
+  grid-column: 1 / -1;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 1.1;
+  color: #64099b;
 }
 
-cart__list {
-
+.cart__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .cart__summary {
-
+  display: grid;
+  grid-template-areas:
+      'title button'
+      'total button';
+  gap: 6px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-radius: 6px;
+  background-color: #f2f9f7;
 }
 
 .cart__summary-title {
-
+  grid-area: title;
+  font-weight: 400;
 }
 
 .cart__total {
-
+  grid-area: total;
+  margin: 0;
 }
 
 .cart__order-button {
-
+  grid-area: button;
+  padding: 16px 24px;
+  border: 1px solid #64099b;
+  border-radius: 4px;
+  color: #64099b;
+  background-color: transparent;
+  cursor: pointer;
 }
 
+@media (max-width: 1240px) {
+  .cart {
+    padding-top: 170px;
+  }
+
+  .cart__container {
+    gap: 32px 60px;
+  }
+}
+
+@media (max-width: 940px) {
+  .cart {
+    padding-top: 140px;
+    padding-bottom: 30px;
+  }
+
+  .cart__container {
+    gap: 24px 20px;
+  }
+
+  .cart__summary {
+    grid-template-areas: 'title total button';
+    grid-template-columns: auto auto 1fr;
+    grid-column: span 2;
+    margin-bottom: 16px;
+    padding: 16px;
+    order: -1;
+  }
+
+  .cart__summary-title {
+    font-size: 16px;
+  }
+
+  .cart__total {
+    padding-top: 3px;
+    font-size: 16px;
+  }
+
+  .cart__order-button {
+    padding: 12px 18px;
+    justify-self: end;
+    font-size: 16px;
+  }
+
+  .cart__title {
+    font-size: 36px;
+  }
+
+  .cart__list {
+    grid-column: span 2;
+    grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 660px) {
+  .cart {
+    padding-top: 100px;
+  }
+
+  .cart__summary {
+    grid-template-areas:
+      'title button'
+      'total button';
+    grid-template-columns: 1fr 2fr;
+    gap: 2px;
+  }
+
+  .cart__total {
+    padding-top: 0;
+  }
+
+  .cart__list {
+    grid-template-columns: repeat(auto-fit, minmax(139px, 1fr));
+    gap: 8px;
+  }
+}
