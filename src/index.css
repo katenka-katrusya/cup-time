@@ -69,8 +69,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 46px;
-  max-width: 1392px;
+  padding: 12px 26px;
+  max-width: 1352px;
   backdrop-filter: blur(60px);
   background: rgba(108, 185, 171, 0.7);
 }
@@ -147,6 +147,8 @@ img {
   display: flex;
   flex-direction: column;
   min-height: 600px;
+  height: 100%;
+  border-radius: 6px;
   background-color: #f2f9f7;
   color: #1d1c1d;;
 }
@@ -161,10 +163,12 @@ img {
 .product__image {
   display: block;
   width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .product__title {
-  flex-grow: 1;
+  /*flex-grow: 1;*/
   margin-bottom: 4px;
   font-size: 24px;
   font-weight: 400;
@@ -177,6 +181,7 @@ img {
 
 .product__price {
   margin: 0;
+  margin-top: auto;
 }
 
 .footer {
@@ -196,21 +201,9 @@ img {
   font-size: 0;
 }
 
-.footer__nav {
-
-}
-
 .footer__menu {
   display: flex;
   gap: 50px;
-}
-
-.footer__menu-item {
-
-}
-
-.footer__menu-link {
-
 }
 
 .footer__info {
@@ -222,20 +215,8 @@ img {
   margin-bottom: 17px;
 }
 
-.footer__developers {
-
-}
-
-.footer__developer {
-
-}
-
-.footer__developer-link {
-
-}
-
-.footer__contacts {
-
+.footer__developer:not(:last-child) {
+  margin-bottom: 3px;
 }
 
 .footer__email {
@@ -248,13 +229,192 @@ img {
   gap: 12px;
 }
 
-.footer__social-item {
+@media (max-width: 1240px) {
+  .container {
+    padding: 0 42px;
+  }
 
+  .header {
+    padding: 0 20px;
+    top: 20px;
+  }
+
+  .header__container {
+    padding: 12px 22px;
+  }
+
+  /*  promo  */
+  .promo__container {
+    padding-top: 172px;
+    padding-bottom: 60px;
+    background-image: url("/img/bg-image-1024.png");
+    background-position: right 48px bottom 0;
+  }
+
+  .promo__title {
+    max-width: 620px;
+    margin-bottom: 40px;
+    font-size: 70px;
+  }
+
+  /* products */
+  .product {
+    min-height: 450px;
+  }
+
+  /*  footer  */
+  .footer__menu {
+    gap: 32px;
+  }
 }
 
-.footer__social-link {
+@media (max-width: 940px) {
+  .header__container {
+    padding: 8px 22px;
+  }
 
+  .header__logo {
+    width: 78px;
+  }
+
+  .header__menu {
+    gap: 24px;
+  }
+
+  .header__menu-link {
+    font-size: 16px;
+  }
+
+  /*  promo  */
+  .promo__title {
+    max-width: 460px;
+    font-size: 54px;
+  }
+
+  .promo__container {
+    padding-top: 157px;
+    background-position: right bottom;
+    background-size: 203px;
+  }
+
+  .promo__link {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+
+  /* products */
+  .products {
+    padding: 80px 0;
+  }
+
+  .products__title {
+    margin-bottom: 24px;
+    font-size: 36px;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(auto-fill, minmax(217px, 1fr));
+    gap: 16px;
+  }
+
+  .product {
+    min-height: 360px;
+  }
+
+  .product__title {
+    font-size: 20px;
+  }
+
+  .product__price {
+    font-size: 16px;
+  }
+
+  /*  footer  */
+  .footer {
+    padding: 40px 0;
+  }
+
+  .footer__menu {
+    gap: 24px;
+    font-size: 16px;
+  }
+
+  .footer__info {
+    font-size: 12px;
+  }
+
+  .footer__email {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
 }
 
+@media (max-width: 660px) {
+  .container {
+    padding: 0 16px;
+  }
 
+  .header {
+    top: 0;
+    padding: 0;
+  }
 
+  .header__container {
+    padding: 8px 16px;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  /*  promo  */
+  .promo__container {
+    padding-top: 89px;
+    padding-bottom: 249px;
+    background-image: url("/img/bg-image-320.png");
+    background-position: right 70px bottom 0;
+    background-size: 145px;
+  }
+
+  .promo__title {
+    margin-bottom: 24px;
+    font-size: 40px;
+  }
+
+  /* products */
+  .products {
+    padding: 60px 0;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+  }
+
+  .product__content {
+    padding: 32px 8px 16px;
+  }
+
+  .product__image {
+    height: 226px;
+  }
+
+  .product__title {
+    font-size: 16px;
+  }
+
+  /*  footer  */
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer__menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer__info {
+    order: 1;
+  }
+}
