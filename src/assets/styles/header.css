@@ -1,0 +1,87 @@
+.header {
+  position: absolute;
+  padding: 0 24px;
+  width: 100%;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 26px;
+  max-width: 1352px;
+  border-radius: 6px;
+  backdrop-filter: blur(60px);
+  background: rgba(108, 185, 171, 0.7);
+}
+
+.header__logo-link {
+  font-size: 0;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.header__cart-link {
+  width: 28px;
+  height: 28px;
+  padding: 11px 4px 3px;
+  font-size: 12px;
+  color: #64099b;
+  background-image: url("/img/bag.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+}
+
+@media (max-width: 1240px) {
+  .header {
+    padding: 0 20px;
+    top: 20px;
+  }
+
+  .header__container {
+    padding: 12px 22px;
+  }
+}
+
+@media (max-width: 940px) {
+  .header__container {
+    padding: 8px 22px;
+  }
+
+  .header__logo {
+    width: 78px;
+  }
+
+  .header__menu {
+    gap: 24px;
+  }
+
+  .header__menu-link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 660px) {
+  .header {
+    top: 0;
+    padding: 0;
+  }
+
+  .header__container {
+    padding: 8px 16px;
+    border-radius: 0;
+  }
+
+  .header__nav {
+    display: none;
+  }
+}

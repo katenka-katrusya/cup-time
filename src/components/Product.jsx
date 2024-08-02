@@ -5,7 +5,7 @@ export const Product = ({ data }) => {
         <img src={data.image} alt={data.title} className='product__image' />
         <div className='product__content'>
           <h3 className='product__title'>{data.title}</h3>
-          <p className='product__price'>{data.price} ₽</p>
+          <p className='product__price'>{data.price}&nbsp;₽</p>
         </div>
       </article>
     </li>

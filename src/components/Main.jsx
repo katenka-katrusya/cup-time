@@ -1,11 +1,9 @@
-import { Promo } from './Promo.jsx';
-import { Products } from './Products.jsx';
+import { Router } from './Router.jsx';
 
 export const Main = () => {
   return (
     <main className='main'>
-      <Promo />
-      <Products />
+      <Router />
     </main>
   );
 }

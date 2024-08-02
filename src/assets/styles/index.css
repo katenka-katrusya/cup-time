@@ -1,0 +1,69 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/inter-v13-cyrillic_latin-regular.woff2') format('woff2');
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  line-height: 1.24;
+  background-color: #fff;
+  color: #1d1c1d;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    padding: 0 42px;
+  }
+}
+
+@media (max-width: 660px) {
+  .container {
+    padding: 0 16px;
+  }
+}
