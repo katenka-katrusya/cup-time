@@ -29,6 +29,18 @@
   gap: 50px;
 }
 
+.header__menu-link {
+  transition: color 0.3s ease-in-out;
+}
+
+.header__menu-link.active {
+  color: #64099b;
+}
+
+.header__menu-link:hover {
+  color: #64099b;
+}
+
 .header__cart-link {
   width: 28px;
   height: 28px;

@@ -1,6 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Header = () => {
+  const location = useLocation();
+  const getActiveClass = (category) => {
+    const currentCategory = new URLSearchParams(location.search).get('category');
+
+    return currentCategory === category ? 'active' : '';
+  }
+
   return (
     <header className='header'>
       <div className='container header__container'>
@@ -11,19 +18,19 @@ export const Header = () => {
         <nav className='header__nav'>
           <ul className='header__menu'>
             <li className='header__menu-item'>
-              <a href='#' className='header__menu-link'>Чай</a>
+              <Link to='/products?category=tea' className={`header__menu-link ${getActiveClass('tea')}`}>Чай</Link>
             </li>
             <li className='header__menu-item'>
-              <a href='#' className='header__menu-link'>Кофе</a>
+              <Link to='/products?category=coffee' className={`header__menu-link ${getActiveClass('coffee')}`}>Кофе</Link>
             </li>
             <li className='header__menu-item'>
-              <a href='#' className='header__menu-link'>Чайники</a>
+              <Link to='/products?category=teapots' className={`header__menu-link ${getActiveClass('teapots')}`}>Чайники</Link>
             </li>
             <li className='header__menu-item'>
-              <a href='#' className='header__menu-link'>Турки</a>
+              <Link to='/products?category=cezves' className={`header__menu-link ${getActiveClass('cezves')}`}>Турки</Link>
             </li>
             <li className='header__menu-item'>
-              <a href='#' className='header__menu-link'>Прочее</a>
+              <Link to='/products?category=other' className={`header__menu-link ${getActiveClass('other')}`}>Прочее</Link>
             </li>
           </ul>
         </nav>
@@ -31,5 +38,5 @@ export const Header = () => {
         <Link to='/cart' className='header__cart-link'>6</Link>
       </div>
     </header>
-  )
-}
+  );
+};

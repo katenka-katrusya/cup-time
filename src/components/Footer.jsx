@@ -30,10 +30,10 @@ export const Footer = () => {
           <p className='footer__copyright'>&copy;CUPTIME, 2024</p>
           <ul className='footer__developers'>
             <li className='footer__developer'>Designer:
-              <a href='#' className='footer__developer-link' target='_blank'>Anastasia Ilina</a>
+              <a href='#' className='footer__developer-link' target='_blank'> Anastasia Ilina</a>
             </li>
             <li className='footer__developer'>Developer:
-              <a href='https://t.me/moon_sugar_moon' className='footer__developer-link' target='_blank'>Ekaterina
+              <a href='https://t.me/moon_sugar_moon' className='footer__developer-link' target='_blank'> Ekaterina
                 Suslova</a>
             </li>
           </ul>

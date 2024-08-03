@@ -94,7 +94,8 @@
   }
 
   .order__form {
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 8px 0;
   }
 
   .order__input {
