@@ -6,4 +6,6 @@
 @import "footer.css";
 @import "cart.css";
 @import "cartItem.css";
+@import "quantity.css";
 @import "order.css";
+@import "modal.css";

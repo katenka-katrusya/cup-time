@@ -1,0 +1,151 @@
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+  position: relative;
+  display: flex;
+  max-width: 744px;
+  width: 100%;
+  min-height: 360px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #f2f9f7;
+}
+
+.modal__btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal__image {
+  max-width: 336px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.modal__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 17px;
+  padding: 40px 24px 24px;
+  width: 100%;
+}
+
+.modal__title {
+  max-width: 90%;
+  margin-bottom: 12px;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.modal__price {
+  margin: 0;
+}
+
+.modal__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 16px;
+  text-align: end;
+}
+
+.modal__item:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.modal__desc {
+  color: #b8b8b8;
+}
+
+.modal__quantity-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 0;
+}
+
+.modal__quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__quantity-btn {
+  padding: 15px 24px;
+  border: 1px solid #64099b;
+  border-radius: 4px;
+  color: #64099b;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media (max-width: 940px) {
+  .modal__content {
+    max-width: 524px;
+    min-height: 260px;
+  }
+
+  .modal__image {
+    max-width: 224px;
+  }
+
+  .modal__info {
+    padding: 24px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+  }
+
+  .modal__price {
+    font-size: 16px;
+  }
+
+  .modal__item {
+    font-size: 12px;
+  }
+
+  .modal__quantity {
+    font-size: 16px;
+  }
+
+  .modal__quantity-btn {
+    padding: 12px 18px;
+  }
+}
+
+@media (max-width: 660px) {
+  .modal__content {
+    flex-direction: column;
+    max-width: 290px;
+    min-height: 500px;
+  }
+
+  .modal__image {
+    max-width: 290px;
+    width: 100%;
+    height: 276px;
+  }
+
+  .modal__info {
+    flex-grow: 1;
+    padding: 16px;
+  }
+}
+

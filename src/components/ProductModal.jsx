@@ -1,16 +1,6 @@
 import Modal from 'react-modal';
 import { API_URL } from '../const.js';
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-}
+import { Quantity } from './ui/Quantity.jsx';
 
 Modal.setAppElement('#root');
 
@@ -23,20 +13,35 @@ export const ProductModal = ({ isOpen, onRequestClose, data }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      style={customStyles}
-      contentLabel='Product Modal'
+      portalClassName='modal'
+      overlayClassName='modal__overlay'
+      className='modal__content'
     >
-      <h2>{data.title}</h2>
-      <img src={`${API_URL}${data.img}`} alt={data.title} />
-      <p>{data.price}</p>
-      <ul>
-        {Object.entries(data.additional).map(([key, value]) => (
-          <li key={key}>
-            <strong>{key}:</strong> {value}
-          </li>
-        ))}
-      </ul>
-      <button onClick={onRequestClose}>Закрыть</button>
+      <div className='modal__content'>
+        <img className='modal__image' src={`${API_URL}${data.img}`} alt={data.title} />
+        <div className='modal__info'>
+          <div className='modal__header'>
+            <h2 className='modal__title'>{data.title}</h2>
+            <p className='modal__price'>{data.price}&nbsp;₽</p>
+          </div>
+          <ul className='modal__list'>
+            {Object.entries(data.additional).map(([key, value]) => (
+              <li className='modal__item' key={key}>
+                <span className='modal__desc'>{key}:</span> {value}
+              </li>
+            ))}
+          </ul>
+          <div className='modal__quantity'>
+            <div className='modal__quantity-wrapper'>
+              <Quantity />
+            </div>
+            <button className='modal__quantity-btn'>Добавить</button>
+          </div>
+        </div>
+        <button className='modal__btn' onClick={onRequestClose}>
+          <img src='/img/close-modal.svg' alt='Закрытие модального окна' />
+        </button>
+      </div>
     </Modal>
   );
 };

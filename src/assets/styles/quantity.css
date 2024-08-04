@@ -1,0 +1,44 @@
+.quantity-btn {
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.quantity-btn_minus {
+  background-image: url("/img/minus.svg");
+}
+
+.quantity-btn_plus {
+  background-image: url("/img/plus.svg");
+}
+
+.quantity-input {
+  width: 26px;
+  text-align: center;
+  vertical-align: center;
+  border: transparent;
+  background-color: transparent;
+  outline: transparent;
+}
+
+@media (max-width: 940px) {
+  .quantity-btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .quantity-input {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 660px) {
+  .quantity {
+    margin-bottom: 12px;
+  }
+}
