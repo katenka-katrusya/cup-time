@@ -7,6 +7,22 @@ export const Products = () => {
   const [searchParams] = useSearchParams();
   const { products, setCategory } = useProducts();
   const category = searchParams.get('category');
+  const title = (category) => {
+    switch (category) {
+      case 'tea':
+        return 'Чай';
+      case 'coffee':
+        return 'Кофе';
+      case 'teapots':
+        return 'Чайники';
+      case 'cezves':
+        return 'Турки';
+      case 'other':
+        return 'Прочее';
+      default:
+        return 'Чай';
+    }
+  }
 
   useEffect(() => {
     setCategory(category);
@@ -15,7 +31,7 @@ export const Products = () => {
   return (
     <section className='products'>
       <div className='container'>
-        <h2 className='products__title'>{category}</h2>
+        <h2 className='products__title'>{title(category)}</h2>
 
         <ul className='products__list'>
           {products.map(product => <Product key={product.id} data={product} />)}
