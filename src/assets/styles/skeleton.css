@@ -1,0 +1,17 @@
+.skeleton-wrapper {
+  width: 100%;
+  height: 600px;
+  background-color: #f2f9f7;
+}
+
+@media (max-width: 1240px) {
+  .skeleton-wrapper {
+    height: 450px;
+  }
+}
+
+@media (max-width: 940px) {
+  .skeleton-wrapper {
+    height: 360px;
+  }
+}

@@ -1,12 +1,19 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useCart } from '../context/CartContext.jsx';
 
 export const Header = () => {
+  const { cart } = useCart();
+  const totalQuantity =
+    cart
+    ? cart.reduce((acc, item) => acc + item.quantity, 0)
+    : 0;
+
   const location = useLocation();
   const getActiveClass = (category) => {
     const currentCategory = new URLSearchParams(location.search).get('category');
 
     return currentCategory === category ? 'active' : '';
-  }
+  };
 
   return (
     <header className='header'>
@@ -21,21 +28,25 @@ export const Header = () => {
               <Link to='/products?category=tea' className={`header__menu-link ${getActiveClass('tea')}`}>Чай</Link>
             </li>
             <li className='header__menu-item'>
-              <Link to='/products?category=coffee' className={`header__menu-link ${getActiveClass('coffee')}`}>Кофе</Link>
+              <Link to='/products?category=coffee'
+                    className={`header__menu-link ${getActiveClass('coffee')}`}>Кофе</Link>
             </li>
             <li className='header__menu-item'>
-              <Link to='/products?category=teapots' className={`header__menu-link ${getActiveClass('teapots')}`}>Чайники</Link>
+              <Link to='/products?category=teapots'
+                    className={`header__menu-link ${getActiveClass('teapots')}`}>Чайники</Link>
             </li>
             <li className='header__menu-item'>
-              <Link to='/products?category=cezves' className={`header__menu-link ${getActiveClass('cezves')}`}>Турки</Link>
+              <Link to='/products?category=cezves'
+                    className={`header__menu-link ${getActiveClass('cezves')}`}>Турки</Link>
             </li>
             <li className='header__menu-item'>
-              <Link to='/products?category=other' className={`header__menu-link ${getActiveClass('other')}`}>Прочее</Link>
+              <Link to='/products?category=other'
+                    className={`header__menu-link ${getActiveClass('other')}`}>Прочее</Link>
             </li>
           </ul>
         </nav>
 
-        <Link to='/cart' className='header__cart-link'>6</Link>
+        <Link to='/cart' className='header__cart-link'>{totalQuantity}</Link>
       </div>
     </header>
   );

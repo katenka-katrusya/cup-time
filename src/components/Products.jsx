@@ -2,11 +2,13 @@ import { Product } from './Product.jsx';
 import { useEffect } from 'react';
 import { useProducts } from '../context/ProductContext.jsx';
 import { useSearchParams } from 'react-router-dom';
+import { SkeletonLoader } from './SkeletonLoader.jsx';
 
 export const Products = () => {
   const [searchParams] = useSearchParams();
   const { products, setCategory } = useProducts();
   const category = searchParams.get('category');
+
   const title = (category) => {
     switch (category) {
       case 'tea':
@@ -34,7 +36,10 @@ export const Products = () => {
         <h2 className='products__title'>{title(category)}</h2>
 
         <ul className='products__list'>
-          {products.map(product => <Product key={product.id} data={product} />)}
+          {products.length
+           ? products.map(product => <Product key={product.id} data={product} />)
+           : <SkeletonLoader />
+          }
         </ul>
       </div>
     </section>

@@ -19,6 +19,7 @@
 .product__image {
   display: block;
   width: 100%;
+  object-fit: cover;
 }
 
 .product__title {
@@ -66,7 +67,6 @@
 
   .product__image {
     min-height: 226px;
-    object-fit: cover;
   }
 
   .product__title {
