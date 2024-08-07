@@ -35,6 +35,7 @@ export const ProductModal = ({ isOpen, onRequestClose, data }) => {
       onRequestClose={onRequestClose}
       className='modal'
       overlayClassName='modal__overlay'
+      contentLabel={data.title}
     >
       <img className='modal__image' src={`${API_URL}${data.img}`} alt={data.title} />
       <div className='modal__info'>
@@ -57,7 +58,7 @@ export const ProductModal = ({ isOpen, onRequestClose, data }) => {
         </div>
       </div>
       <button className='modal__btn' onClick={onRequestClose}>
-        <img src='/img/close-modal.svg' alt='Закрытие модального окна' />
+        <img className='modal__close-btn' src='/img/close-modal.svg' alt='Закрытие модального окна' />
       </button>
     </Modal>
   );

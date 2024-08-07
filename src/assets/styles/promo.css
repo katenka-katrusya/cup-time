@@ -4,6 +4,7 @@
 }
 
 .promo__container {
+  min-height: 610px;
   padding-top: 210px;
   padding-bottom: 80px;
   background-image: url("/img/bg-image.png");
@@ -28,6 +29,7 @@
 
 @media (max-width: 1240px) {
   .promo__container {
+    min-height: 490px;
     padding-top: 172px;
     padding-bottom: 60px;
     background-image: url("/img/bg-image-1024.png");
@@ -42,15 +44,16 @@
 }
 
 @media (max-width: 940px) {
-  .promo__title {
-    max-width: 460px;
-    font-size: 54px;
-  }
-
   .promo__container {
+    min-height: 429px;
     padding-top: 157px;
     background-position: right bottom;
     background-size: 203px;
+  }
+
+  .promo__title {
+    max-width: 460px;
+    font-size: 54px;
   }
 
   .promo__link {
@@ -61,7 +64,6 @@
 
 @media (max-width: 660px) {
   .promo__container {
-    /*min-height: auto;*/
     padding-top: 90px;
     padding-bottom: 250px;
     background-image: url("/img/bg-image-320.png");

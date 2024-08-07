@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
 }
 
 .modal {
@@ -90,6 +91,14 @@
   color: #64099b;
   background-color: transparent;
   cursor: pointer;
+}
+
+.modal__close-btn {
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal__close-btn:hover {
+  transform: rotate(90deg);
 }
 
 @media (max-width: 940px) {
