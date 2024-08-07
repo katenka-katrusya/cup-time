@@ -1,4 +1,13 @@
+import { useOrder } from '../context/OrderContext.jsx';
+
 export const Order = () => {
+  const { orderDetails, updateOrderDetails } = useOrder();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    updateOrderDetails(name, value);
+  };
+
   return (
     <section className='order'>
       <div className='container'>
@@ -10,18 +19,24 @@ export const Order = () => {
             type='text'
             name='name'
             placeholder='Имя'
+            value={orderDetails.name}
+            onChange={handleChange}
           />
           <input
             className='order__input'
             type='text'
             name='phone'
             placeholder='Телефон'
+            value={orderDetails.phone}
+            onChange={handleChange}
           />
           <input
             className='order__input order__input_address'
             type='text'
             name='address'
             placeholder='Адрес'
+            value={orderDetails.address}
+            onChange={handleChange}
           />
 
           <fieldset className='order__payment'>
@@ -33,7 +48,8 @@ export const Order = () => {
                 name='payment'
                 value='card'
                 className='order__radio'
-                defaultChecked
+                checked={orderDetails.payment === 'card'}
+                onChange={handleChange}
               />
               Картой
             </label>
@@ -43,6 +59,8 @@ export const Order = () => {
                 name='payment'
                 value='cash'
                 className='order__radio'
+                checked={orderDetails.payment === 'cash'}
+                onChange={handleChange}
               />
               Наличные
             </label>
@@ -50,5 +68,5 @@ export const Order = () => {
         </form>
       </div>
     </section>
-  )
-}
+  );
+};

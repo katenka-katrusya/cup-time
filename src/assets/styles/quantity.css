@@ -6,7 +6,14 @@
   border-radius: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  outline: 1px solid transparent;
   cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.quantity-btn:hover,
+.quantity-btn:focus-visible {
+  border-color: #64099b;
 }
 
 .quantity-btn_minus {

@@ -85,7 +85,6 @@
 
   .cart__summary {
     grid-template-areas: 'title total button';
-    /*grid-template-columns: auto auto 1fr;*/
     grid-template-columns: auto 1fr min-content;
     margin-bottom: 40px;
     padding: 16px;
@@ -127,7 +126,6 @@
     grid-template-areas:
       'title button'
       'total button';
-    /*grid-template-columns: 1fr 2fr;*/
     gap: 2px;
     margin-bottom: 30px;
   }

@@ -1,12 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
+import { useProducts } from '../context/ProductContext.jsx';
 
 export const Header = () => {
   const { cart } = useCart();
-  const totalQuantity =
-    cart
-    ? cart.reduce((acc, item) => acc + item.quantity, 0)
-    : 0;
+  const { categories } = useProducts();
+  const totalQuantity = cart?.reduce((acc, item) => acc + item.quantity, 0) ?? 0;
 
   const location = useLocation();
   const getActiveClass = (category) => {
@@ -21,28 +20,13 @@ export const Header = () => {
         <Link to='/' className='header__logo-link'>
           <img src='/img/logo.svg' alt='Логотип Cup Time' className='header__logo' />
         </Link>
-
         <nav className='header__nav'>
           <ul className='header__menu'>
-            <li className='header__menu-item'>
-              <Link to='/products?category=tea' className={`header__menu-link ${getActiveClass('tea')}`}>Чай</Link>
-            </li>
-            <li className='header__menu-item'>
-              <Link to='/products?category=coffee'
-                    className={`header__menu-link ${getActiveClass('coffee')}`}>Кофе</Link>
-            </li>
-            <li className='header__menu-item'>
-              <Link to='/products?category=teapots'
-                    className={`header__menu-link ${getActiveClass('teapots')}`}>Чайники</Link>
-            </li>
-            <li className='header__menu-item'>
-              <Link to='/products?category=cezves'
-                    className={`header__menu-link ${getActiveClass('cezves')}`}>Турки</Link>
-            </li>
-            <li className='header__menu-item'>
-              <Link to='/products?category=other'
-                    className={`header__menu-link ${getActiveClass('other')}`}>Прочее</Link>
-            </li>
+            {Object.entries(categories).map(([key, value]) =>
+              <li key={key} className='header__menu-item'>
+                <Link to={`/products?category=${key}`} className={`header__menu-link ${getActiveClass(key)}`}>{value}</Link>
+              </li>
+            )}
           </ul>
         </nav>
 

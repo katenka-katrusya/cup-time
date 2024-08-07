@@ -1,16 +1,13 @@
 .modal__overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal__content {
+.modal {
   position: relative;
   display: flex;
   max-width: 744px;
@@ -96,7 +93,7 @@
 }
 
 @media (max-width: 940px) {
-  .modal__content {
+  .modal {
     max-width: 524px;
     min-height: 260px;
   }
@@ -131,10 +128,15 @@
 }
 
 @media (max-width: 660px) {
-  .modal__content {
+  .modal {
     flex-direction: column;
     max-width: 290px;
     min-height: 500px;
+  }
+
+  .modal__btn {
+    top: 16px;
+    right: 16px;
   }
 
   .modal__image {
