@@ -91,6 +91,17 @@
   color: #64099b;
   background-color: transparent;
   cursor: pointer;
+  outline: transparent;
+  transition-property: color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.modal__quantity-btn:active,
+.modal__quantity-btn:hover,
+.modal__quantity-btn:focus-visible{
+  border-color: #6cb9ab;
+  color: #6cb9ab;
 }
 
 .modal__close-btn {

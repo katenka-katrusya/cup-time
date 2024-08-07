@@ -8,12 +8,16 @@
   background-position: center;
   outline: 1px solid transparent;
   cursor: pointer;
-  transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s linear;
 }
 
-.quantity-btn:hover,
 .quantity-btn:focus-visible {
   border-color: #64099b;
+}
+
+.quantity-btn:active,
+.quantity-btn:hover {
+  border-color: #6CB9AB;
 }
 
 .quantity-btn_minus {

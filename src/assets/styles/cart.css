@@ -55,6 +55,16 @@
   color: #64099b;
   background-color: transparent;
   cursor: pointer;
+  outline: transparent;
+  transition-property: color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.cart__order-button:active,
+.cart__order-button:hover {
+  border-color: #6cb9ab;
+  color: #6cb9ab;
 }
 
 @media (max-width: 1240px) {

@@ -41,6 +41,11 @@
   color: #64099b;
 }
 
+/*.header__menu-link:focus-visible {*/
+/*  outline: 1px solid #64099b;*/
+/*  outline-offset: 4px;*/
+/*}*/
+
 .header__cart-link {
   width: 28px;
   height: 28px;
