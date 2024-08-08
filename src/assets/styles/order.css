@@ -111,6 +111,7 @@
   .order__form {
     grid-template-columns: 1fr;
     gap: 8px 0;
+    margin-bottom: 30px;
   }
 
   .order__input {

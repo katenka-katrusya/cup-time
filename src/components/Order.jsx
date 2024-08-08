@@ -1,4 +1,5 @@
 import { useOrder } from '../context/OrderContext.jsx';
+import { CartSummary } from './CartSummary.jsx';
 
 export const Order = () => {
   const { orderDetails, updateOrderDetails } = useOrder();
@@ -66,6 +67,7 @@ export const Order = () => {
             </label>
           </fieldset>
         </form>
+        <CartSummary classNameComponent='cart__summary-bottom cart__summary' />
       </div>
     </section>
   );

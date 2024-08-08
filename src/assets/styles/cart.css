@@ -37,6 +37,10 @@
   background-color: #f2f9f7;
 }
 
+.cart__summary-bottom {
+  display: none;
+}
+
 .cart__summary-title {
   grid-area: title;
   font-weight: 400;
@@ -138,6 +142,11 @@
       'total button';
     gap: 2px;
     margin-bottom: 30px;
+  }
+
+  .cart__summary-bottom {
+    display: grid;
+    margin: 0;
   }
 
   .cart__total {
