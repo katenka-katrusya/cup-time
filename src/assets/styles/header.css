@@ -112,6 +112,10 @@
     border-radius: 0;
   }
 
+  .header__menu-link {
+    font-size: 24px;
+  }
+
   .header__nav {
     display: none;
   }
