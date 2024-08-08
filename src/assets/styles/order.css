@@ -25,11 +25,16 @@
   border: 1px solid transparent;
   border-radius: 4px;
   outline: transparent;
-  transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s linear;
 }
 
-.order-input:focus-visible {
+.order__input:focus-visible,
+.order__input:hover {
   border-color: #64099b;
+}
+
+.order__input:active {
+  border-color: #6cb9ab;
 }
 
 .order__input::placeholder {

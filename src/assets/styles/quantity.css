@@ -12,12 +12,12 @@
 }
 
 .quantity-btn:focus-visible {
-  border-color: #64099b;
+  border-color: #6cb9ab;
 }
 
 .quantity-btn:active,
 .quantity-btn:hover {
-  border-color: #6CB9AB;
+  border-color: #64099b;
 }
 
 .quantity-btn_minus {

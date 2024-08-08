@@ -16,7 +16,6 @@ export const Header = () => {
   const location = useLocation();
   const getActiveClass = (category) => {
     const currentCategory = new URLSearchParams(location.search).get('category');
-
     return currentCategory === category ? 'active' : '';
   };
 

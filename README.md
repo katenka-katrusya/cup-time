@@ -1,5 +1,9 @@
 # React + Vite
 
+## Cup Time
+Интернет-магазин кофе, чая и дополнительных аксессуаров, созданный на React. 
+Ссылка на сайт: [cup-time](https://dashboard.render.com/)
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
