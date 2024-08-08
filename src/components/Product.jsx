@@ -1,10 +1,15 @@
 import { API_URL } from '../const.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ProductModal } from './ProductModal.jsx';
 
 export const Product = ({ data }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
+  }, [isModalOpen]);
+
 
   const openModal = (event) => {
     event.preventDefault();

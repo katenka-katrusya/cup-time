@@ -1,13 +1,17 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
 import { useProducts } from '../context/ProductContext.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const Header = () => {
   const { cart } = useCart();
   const { categories } = useProducts();
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+  }, [isMenuOpen]);
+
   const closeMenu = () => setIsMenuOpen(false);
   const openMenu = () => setIsMenuOpen(true);
 
