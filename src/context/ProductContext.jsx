@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { API_URL } from '../const.js';
 
 const ProductContext = createContext();
@@ -6,6 +6,7 @@ const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('');
+  const productsRef = useRef(null);
 
   const categories = {
     tea: 'Чай',
@@ -30,7 +31,7 @@ export const ProductProvider = ({ children }) => {
   }, [category]);
 
   return (
-    <ProductContext.Provider value={{ products, setCategory, categories }}>
+    <ProductContext.Provider value={{ products, setCategory, categories, productsRef }}>
       {children}
     </ProductContext.Provider>
   );

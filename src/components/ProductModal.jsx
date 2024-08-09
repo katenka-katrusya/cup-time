@@ -1,7 +1,7 @@
 import Modal from 'react-modal';
 import { API_URL } from '../const.js';
 import { Quantity } from './ui/Quantity.jsx';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useCart } from '../context/CartContext.jsx';
 
 Modal.setAppElement('#root');

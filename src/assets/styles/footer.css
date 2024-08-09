@@ -20,18 +20,6 @@
   gap: 50px;
 }
 
-.footer__menu-link {
-  transition: color 0.3s ease-in-out;
-}
-
-.footer__menu-link:hover {
-  color: #64099b;
-}
-
-.footer__menu-link.active {
-  color: #64099b;
-}
-
 .footer__info {
   font-size: 16px;
 }
@@ -55,14 +43,22 @@
   gap: 12px;
 }
 
-.footer__social-img {
-  transition-property: fill, transform;
+.footer__social-link {
+  display: block;
+  color: #fff;
+  line-height: 0;
+  transition-property: color, transform;
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
 
-.footer__social-img:hover {
-  fill: #64099b;
+.footer__social-link:focus-visible {
+  color: #64099b;
+  outline: 1px solid #64099b;
+}
+
+.footer__social-link:hover {
+  color: #64099b;
   transform: scale(1.1);
 }
 

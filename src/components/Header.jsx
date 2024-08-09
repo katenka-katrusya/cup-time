@@ -1,7 +1,8 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
 import { useProducts } from '../context/ProductContext.jsx';
 import { useEffect, useState } from 'react';
+import { getActiveClass } from '../helpers.js';
 
 export const Header = () => {
   const { cart } = useCart();
@@ -17,16 +18,10 @@ export const Header = () => {
 
   const totalQuantity = cart?.reduce((acc, item) => acc + item.quantity, 0) ?? 0;
 
-  const location = useLocation();
-  const getActiveClass = (category) => {
-    const currentCategory = new URLSearchParams(location.search).get('category');
-    return currentCategory === category ? 'active' : '';
-  };
-
   return (
     <header className='header'>
       <div className='container header__container'>
-        <Link to='/' className='header__logo-link'>
+        <Link to='/' className='header__logo-link' aria-label='Логотип'>
           <img src='/img/logo.svg' alt='Логотип Cup Time' className='header__logo' />
         </Link>
         <nav className={`header__nav ${isMenuOpen ? 'active' : ''}`}>
@@ -34,15 +29,15 @@ export const Header = () => {
             {Object.entries(categories).map(([key, value]) =>
               <li key={key} className='header__menu-item'>
                 <Link to={`/products?category=${key}`}
-                      className={`header__menu-link ${getActiveClass(key)}`}
-                      onClick={closeMenu}>
+                      className={`header__menu-link menu-link ${getActiveClass(key)}`}
+                      onClick={closeMenu} aria-label='Перейти к категории'>
                   {value}
                 </Link>
               </li>
             )}
           </ul>
 
-          <button className='header__close-btn' onClick={closeMenu}>
+          <button className='header__close-btn' onClick={closeMenu} aria-label='Закрыть меню'>
             <svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <rect x='7.28174' y='7.07532' width='20' height='1' transform='rotate(45 7.28174 7.07532)'
                     fill='#D9D9D9' />
